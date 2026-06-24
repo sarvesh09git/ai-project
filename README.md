@@ -6,12 +6,12 @@
 
 ## 🚀 Key Features
 
-- **智能 AI 症状评估 (Symptom Assessment):** Evaluates symptoms, determines urgency levels (Emergency, Urgent, Routine), and provides actionable home care guidance alongside dynamic follow-up questions.
-- **🚨 紧急急救与 SOS (Emergency First-Aid & SOS):** Instantly parses high-urgency keywords (e.g., snakebite, chest pain, choking) to serve immediate visual first-aid instructions, alongside a one-click SOS button to broadcast GPS location coordinates via SMS simulation.
-- **📍 医疗机构发现 (Healthcare Discovery):** Helps users find the nearest hospitals, clinics, pharmacies, and government health centers based on proximity and specific medical requirements.
-- **⏰ 健康用药提醒 (Medicine & Appointment Reminders):** Allows users to set schedules for medication doses, vaccination alerts, and doctor appointments.
-- **🗣️ 多语言翻译支持 (Multilingual Regional Translation):** Automatically detects user language preferences (Hindi, Marathi, English) and translates all AI insights, ensuring seamless accessibility.
-- **👴 老年人/无障碍辅助 (Accessibility Widget):** Features an interactive accessibility panel offering text-to-speech, adjustable font size controls, and high contrast mode.
+- *(Symptom Assessment):** Evaluates symptoms, determines urgency levels (Emergency, Urgent, Routine), and provides actionable home care guidance alongside dynamic follow-up questions.
+- **🚨(Emergency First-Aid & SOS):** Instantly parses high-urgency keywords (e.g., snakebite, chest pain, choking) to serve immediate visual first-aid instructions, alongside a one-click SOS button to broadcast GPS location coordinates via SMS simulation.
+- **📍 (Healthcare Discovery):** Helps users find the nearest hospitals, clinics, pharmacies, and government health centers based on proximity and specific medical requirements.
+- **⏰ (Medicine & Appointment Reminders):** Allows users to set schedules for medication doses, vaccination alerts, and doctor appointments.
+- **🗣️(Multilingual Regional Translation):** Automatically detects user language preferences (Hindi, Marathi, English) and translates all AI insights, ensuring seamless accessibility.
+- **👴 (Accessibility Widget):** Features an interactive accessibility panel offering text-to-speech, adjustable font size controls, and high contrast mode.
 
 ---
 
