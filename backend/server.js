@@ -55,7 +55,11 @@ mongoose.connect(dbUrl)
   });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 SwasthyaAI Server is running on port ${PORT}`);
-  console.log(`👉 API Health Endpoint: http://localhost:${PORT}/`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 SwasthyaAI Server is running on port ${PORT}`);
+    console.log(`👉 API Health Endpoint: http://localhost:${PORT}/`);
+  });
+}
+
+export default app;
