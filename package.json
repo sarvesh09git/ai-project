@@ -1,0 +1,15 @@
+{
+  "name": "swasthya-ai-root",
+  "version": "1.0.0",
+  "description": "Root conductor for SwasthyaAI - Rural Health Navigator MERN Stack",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install --legacy-peer-deps",
+    "dev": "npx concurrently \"npm run dev-backend\" \"npm run dev-frontend\"",
+    "dev-backend": "cd backend && npm run dev",
+    "dev-frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
