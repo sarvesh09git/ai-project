@@ -44,6 +44,56 @@ graph TD
     LangCheck -- English (en) --> Dispatch
 ```
 
+### 🔄 Multi-Agent Request Sequence Flow
+
+Below is the step-by-step sequence of interactions when a user triggers a query or event in the SwasthyaAI system:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Patient/User
+    participant FE as React Frontend UI
+    participant BE as Express Router
+    participant ORC as Coordinator Orchestrator
+    participant DB as MongoDB Database
+    participant AG as Specialized AI Agent
+    participant GEM as Google Gemini API
+
+    User->>FE: Inputs health query / schedules alert / SOS
+    FE->>BE: POST request /api/agent/query (with payload)
+    BE->>ORC: Invokes runOrchestrator()
+    ORC->>DB: Loads user medical history & preferences
+    
+    rect rgb(240, 248, 255)
+        note over ORC, GEM: Preference & Memory Extraction
+        ORC->>GEM: Extracts allergies/medications (if API key present)
+        GEM-->>ORC: Staged preference updates
+        ORC->>DB: Persists preferences (allergies, language, etc.)
+    end
+
+    rect rgb(255, 240, 245)
+        note over ORC, AG: Agent Routing & Execution
+        ORC->>ORC: Classifies query and routes to active agent
+        alt Symptom / Medical query
+            ORC->>AG: Invokes HealthAssessmentAgent / MedicalExplanationAgent
+            AG->>GEM: Requests LLM summary / assessment
+            GEM-->>AG: Returns detailed clinical analysis
+        else Facility Discovery / Emergency SOS
+            ORC->>AG: Invokes HealthcareDiscovery / EmergencySupport (Local db/rules)
+        end
+        AG-->>ORC: Returns execution logs and response payload
+    end
+
+    alt Regional Language Selected
+        ORC->>GEM: Translates payload (via LanguageAssistanceAgent)
+        GEM-->>ORC: Translated regional text (Hindi/Marathi)
+    end
+
+    ORC-->>BE: Returns final payload
+    BE-->>FE: HTTP 200 Response
+    FE->>User: Displays text guidance & outputs voice feedback
+```
+
 ### 🧠 Agent Directory & Responsibilities
 
 1. **Coordinator Orchestrator (`Orchestrator.js`):** Manages user session state, loads history, extracts preferences, makes routing decisions, and acts as the final aggregator.
